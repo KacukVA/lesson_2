@@ -1,3 +1,6 @@
+import re
+
+
 def parse(query: str) -> dict:
     return {}
 
@@ -11,7 +14,9 @@ if __name__ == '__main__':
 
 
 def parse_cookie(query: str) -> dict:
-    return {}
+    keys = re.findall('name|age', query)
+    values = re.findall(r'=([\w=]+)', query)
+    return dict(zip(keys, values))
 
 
 if __name__ == '__main__':
