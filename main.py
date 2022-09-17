@@ -1,5 +1,10 @@
+import re
+
+
 def parse(query: str) -> dict:
-    return {}
+    keys = re.findall('name|color', query)
+    values = re.findall(r'=(\w+)', query)
+    return dict(zip(keys, values))
 
 
 if __name__ == '__main__':
