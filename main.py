@@ -2,9 +2,7 @@ import re
 
 
 def parse(query: str) -> dict:
-    keys = re.findall(r'(\w+)=', query)
-    values = re.findall(r'=(\w+)', query)
-    return dict(zip(keys, values))
+    return dict(re.findall(r';?(\w+)=([\w=?\w]+);?', query))
 
 
 if __name__ == '__main__':
