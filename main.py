@@ -2,7 +2,7 @@ import re
 
 
 def parse(query: str) -> dict:
-    return dict(re.findall(r';?(\w+)=([\w=?\w]+);?', query))
+    return dict(re.findall(r'&?([^&/=?]+)=([^/&]+)&?', query))
 
 
 if __name__ == '__main__':
