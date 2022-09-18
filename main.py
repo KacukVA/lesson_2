@@ -2,7 +2,7 @@ import re
 
 
 def parse(query: str) -> dict:
-    keys = re.findall('name|color', query)
+    keys = re.findall(r'(\w+)=', query)
     values = re.findall(r'=(\w+)', query)
     return dict(zip(keys, values))
 
