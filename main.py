@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
 
 def parse_cookie(query: str) -> dict:
-    return dict(re.findall(r';?(\w+)=([\w=?\w]+);?', query))
+    return dict(re.findall(r';?([^;=]+)=([^;]+);?', query))
 
 
 if __name__ == '__main__':
