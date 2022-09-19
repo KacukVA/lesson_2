@@ -1,3 +1,6 @@
+import re
+
+
 def parse(query: str) -> dict:
     return {}
 
@@ -11,7 +14,7 @@ if __name__ == '__main__':
 
 
 def parse_cookie(query: str) -> dict:
-    return {}
+    return dict(re.findall(r';?([^;=]+)=([^;]+);?', query))
 
 
 if __name__ == '__main__':
